@@ -24,4 +24,12 @@ Pour interagir avec l'API et envoyer un prompt, utilisez l'endpoint /chat :
 curl -X POST http://localhost:5000/chat -H "Content-Type: application/json" -d '{"prompt":"Where is Paris?"}'
 ![image](https://github.com/user-attachments/assets/040f890c-9647-4db4-a266-45ce36325577)
 
+## Tests
+
+### Exécution des Tests avec `pytest et tox`
+![image](https://github.com/user-attachments/assets/94180758-f65a-4666-8c62-6e9161dd7044)
+
+
+
+
 
