@@ -1,20 +1,19 @@
-# Utiliser l'image de base de Python
-FROM python:3.9
+FROM python:3.9 AS builder
 
-# Définir le répertoire de travail
 WORKDIR /app
 
-# Copier le fichier des dépendances
 COPY requirements.txt .
-
-# Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copier le code source
 COPY . .
 
-# Exposer le port de l'application
-EXPOSE 5000
+# Étape pour ajouter Nginx
+RUN apt-get update && apt-get install -y nginx
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Commande pour exécuter l'application
-CMD ["uvicorn", "mini-groq:app", "--host", "0.0.0.0", "--port", "5000"]
+# Expose le port 80 pour Nginx
+EXPOSE 80
+
+# Démarre Nginx et l'application FastAPI
+CMD service nginx start && uvicorn mini-groq:app --host 0.0.0.0 --port 5000
+

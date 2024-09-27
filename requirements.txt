@@ -3,3 +3,5 @@ httpx
 fastapi
 pydantic
 uvicorn
+pytest
+tox
