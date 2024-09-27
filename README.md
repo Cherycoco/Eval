@@ -15,7 +15,7 @@ Ceci est un projet FastAPI qui interagit avec l'API Groq.
 
 Pour vérifier si l'API fonctionne, vous pouvez envoyer une requête GET à l'endpoint `/status` :
 
-```bash
+bash
 curl http://localhost:5000/status
 ![Capture1](https://github.com/user-attachments/assets/4a9b4c4c-ebf9-403a-8ea2-0c5cf40bd0cb)
 
@@ -28,6 +28,7 @@ curl -X POST http://localhost:5000/chat -H "Content-Type: application/json" -d '
 
 ### Exécution des Tests avec `pytest et tox`
 ![image](https://github.com/user-attachments/assets/94180758-f65a-4666-8c62-6e9161dd7044)
+
 
 
 
